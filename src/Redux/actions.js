@@ -1,14 +1,14 @@
-import axios from "axios"
+import { getPosts } from "./Services/Services"
 
 export const fetchPosts  = () => async(dispatch, getState) => {
     dispatch({
         type:"FETCH_POSTS_REQUEST"
     })
     try {
-            const resp = await axios.get("https://jsonplaceholder.typicode.com/posts")
+            const resp = await getPosts()
             dispatch({
                 type:"FETCH_POSTS_SUCCESS",
-                payload: resp.data
+                payload: resp
             })
     } catch (error) {
         dispatch({
@@ -17,5 +17,3 @@ export const fetchPosts  = () => async(dispatch, getState) => {
         })
     }
 }
-
-const users = "https://jsonplaceholder.typicode.com/users"

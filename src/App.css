@@ -6,6 +6,9 @@ body {
   align-items: center;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 h3,
@@ -18,7 +21,7 @@ p {
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  width: 1200px;
+  width: 100%;
 }
 .post {
   margin: 10px;
@@ -27,12 +30,6 @@ p {
   padding: 20px;
   width: 300px;
   height: auto;
-}
-
-body .spinner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .spinner {
@@ -55,4 +52,20 @@ body .spinner {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.links {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: teal;
+  height: 40px;
+  width: 100%;
+}
+
+a {
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
 }

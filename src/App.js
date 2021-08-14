@@ -1,11 +1,10 @@
 import './App.css';
-import Posts from './Components/Posts';
-
+import Nav from './Components/Nav';
 
 function App() {
   return (
     <div>
-        <Posts />
+        <Nav />
     </div>
   );
 }
