@@ -1,4 +1,4 @@
-import { getPosts } from "./Services/Services"
+import { getPosts, getUsers } from "./Services/Services"
 
 export const fetchPosts  = () => async(dispatch, getState) => {
     dispatch({
@@ -13,6 +13,24 @@ export const fetchPosts  = () => async(dispatch, getState) => {
     } catch (error) {
         dispatch({
             type:"FETCH_POSTS_ERROR",
+            error
+        })
+    }
+}
+
+export const fetchUsers = () => async(dispatch, getState) => {
+    dispatch({
+        type:"FETCH_USER_REQUEST"
+    })
+    try {
+            const resp = await getUsers()
+            dispatch({
+                type:"FETCH_USER_SUCCESS",
+                payload: resp
+            })
+    } catch (error) {
+        dispatch({
+            type:"FETCH_USER_ERROR",
             error
         })
     }

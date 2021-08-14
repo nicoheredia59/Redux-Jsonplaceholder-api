@@ -1,5 +1,5 @@
 const initalState={
-    items :[],
+    posts :[],
     loading: false, 
     error: null
 }
@@ -16,14 +16,14 @@ export const postReducer = (state= initalState, action) => {
             return {
                 ...state,
                 loading:false,
-                items: action.payload
+                posts: action.payload
             }
             case "FETCH_POSTS_ERROR":
         return {
             ...state,
             loading:false,
             error: action.null,
-            items:[]
+            posts:[]
         }        
         default:
             return state

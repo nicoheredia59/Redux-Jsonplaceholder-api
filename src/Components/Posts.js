@@ -10,12 +10,13 @@ const Posts = () => {
     useEffect(() => {
         dispatch(fetchPosts())
     }, [])
+    console.log(state)
 
     const renderPosts = () => {
         if(state.loading){
             return <div className="spinner"></div>
         }
-            return state.items.map((el, id) => {
+            return state.posts.posts.map((el, id) => {
                 return  <div className="post" key={id}>
                             <h3>{el.title}</h3>
                             <p>#{el.id}</p>

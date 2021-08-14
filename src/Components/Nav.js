@@ -7,6 +7,7 @@ import {
   } from "react-router-dom";
   import './../App.css'
 import Posts from './Posts';
+import Users from './Users';
 
 const Nav = () => {
     return (
@@ -15,10 +16,14 @@ const Nav = () => {
                 <div className="links">
                     <Link to="/">Home</Link>
                     <Link to="/posts">Posts</Link>
+                    <Link to="/users">Users</Link>
                 </div>
             <Switch>
                 <Route path ="/posts">
                     <Posts />
+                </Route>
+                <Route path ="/users">
+                    <Users />
                 </Route>
             </Switch>
             </div>
